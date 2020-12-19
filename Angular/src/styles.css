@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+body,html{
+    background-color: rgba(171, 202, 228, 0.562);
+}
+
+.margen{
+    margin-top: 15px;
+}
+
+.centrar{
+    text-align: center;
+}

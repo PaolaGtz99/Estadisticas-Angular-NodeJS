@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col centrar">
+            <div class="input-group">
+                <input type="text" class="form-control" [(ngModel)]="claveBusc" placeholder="Clave Ciudad" aria-label="" aria-describedby="basic-addon1">
+                <div class="input-group-append">
+                  <button class="btn btn-dark" type="button" (click)="buscar()">Buscar</button>
+                </div>
+              </div>
+              <small class="margen" style="color: red" *ngIf="datos == null && claveBusc != null">{{mensaje}}</small>
+              
+        </div>
+        <div class="col"></div>
+    </div>
+    
+    <div class="row margen centrar">
+        <div class="col"></div>
+        <div class="col-10"><h1> {{nombre}} </h1></div>
+        <div class="col"></div> 
+    </div>
+    <div class="row">
+        <table class="table table-hover margen centrar">
+            <thead class="thead-light">
+              <tr>
+                <th><h2>MUNICIPIO</h2></th>
+                <th><i class="fas fa-users fa-3x"></i></th>
+                <th><i class="fas fa-female fa-3x" style="color: palevioletred;"></i></th>
+                <th><i class="fas fa-male fa-3x" style="color: rgb(64, 156, 241)"></i></th>
+                <th><i class="fas fa-home fa-3x"></i></th>
+              </tr>
+            </thead>
+            <tbody *ngFor=" let municipio of datos">
+              <tr>
+                <th scope="row"> {{municipio.nom_agem}} </th>
+                <td> {{municipio.pob}} </td>
+                <td> {{municipio.pob_fem}} </td>
+                <td> {{municipio.pob_mas}} </td>
+                <td> {{municipio.viv}} </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
